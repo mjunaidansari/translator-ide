@@ -12,16 +12,16 @@ const EditorScreen = ({ setOutput }) => {
         `function add(a, b) {\n  return a + b;\n}`
     );
 
-		const run = async (event) => {
-			event.preventDefault()
+    const run = async (event) => {
+        event.preventDefault()
 
-			const output = await compileServices.compile(code)
-			setOutput(output)
-		}
+        const output = await compileServices.compile(code)
+        setOutput(output)
+    }
 
-    
+
     return (
-        <div className='w-1/2 border-2 border-gray-200 h-[100vh]'>
+        <div className='w-1/2 border-2 border-gray-200 h-full'>
             <Editor
                 value={code}
                 onValueChange={code => setCode(code)}
@@ -32,9 +32,9 @@ const EditorScreen = ({ setOutput }) => {
                     fontSize: 16,
                 }}
             />
-						<button className="bg-black text-white cursor-pointer" onClick={run}>
-							Run
-						</button>
+            <button className="bg-green-500 px-6 py-2 rounded text-white cursor-pointer" onClick={run}>
+                Run
+            </button>
         </div>
     )
 }
