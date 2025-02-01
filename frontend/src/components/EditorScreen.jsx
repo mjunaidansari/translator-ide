@@ -7,7 +7,7 @@ import 'prismjs/themes/prism.css';
 
 import compileServices from '../services/compileServices';
 
-const EditorScreen = () => {
+const EditorScreen = ({ setOutput }) => {
     const [code, setCode] = React.useState(
         `function add(a, b) {\n  return a + b;\n}`
     );
@@ -16,8 +16,7 @@ const EditorScreen = () => {
 			event.preventDefault()
 
 			const output = await compileServices.compile(code)
-			
-			console.log(output)
+			setOutput(output)
 		}
 
     
