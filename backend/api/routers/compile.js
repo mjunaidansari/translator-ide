@@ -34,15 +34,15 @@ compileRouter.post('/', async (req, res) => {
     'Content-Type': 'application/json'
   }
 
-    axios.post('https://emkc.org/api/v2/piston/execute', data, {
-      headers: headers
-    }).then((response) => {
-        res.json(response.data.run);
-        console.log(response.data);
-    }).catch((error) => {
-        console.log(error);
-        res.status(500).send({ error: "Something went wrong" });
-    });
+  axios.post('https://emkc.org/api/v2/piston/execute', data, {
+    headers: headers
+  }).then((response) => {
+      res.json(response.data.run);
+      console.log(response.data);
+  }).catch((error) => {
+      console.log(error);
+      res.status(500).send({ error: "Something went wrong" });
+  });
 
 })
 

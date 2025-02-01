@@ -5,10 +5,22 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/themes/prism.css';
 
+import compileServices from '../services/compileServices';
+
 const EditorScreen = () => {
     const [code, setCode] = React.useState(
         `function add(a, b) {\n  return a + b;\n}`
     );
+
+		const run = async (event) => {
+			event.preventDefault()
+
+			const output = await compileServices.compile(code)
+			
+			console.log(output)
+		}
+
+    
     return (
         <div className='w-1/2 border-2 border-gray-200 h-[100vh]'>
             <Editor
@@ -21,6 +33,9 @@ const EditorScreen = () => {
                     fontSize: 16,
                 }}
             />
+						<button className="bg-black text-white cursor-pointer" onClick={run}>
+							Run
+						</button>
         </div>
     )
 }
