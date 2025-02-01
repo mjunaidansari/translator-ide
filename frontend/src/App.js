@@ -1,10 +1,10 @@
 import './App.css';
-import RedButton from './components/RedButton';
+import IDE from './components/IDE';
 
 function App() {
     return (
         <div className="App">
-            <RedButton />
+            <IDE />
         </div>
     );
 }
