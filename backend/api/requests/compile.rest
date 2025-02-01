@@ -1,0 +1,8 @@
+POST http://localhost:5000/api/compile
+Content-Type: application/json
+
+{
+	"code": "#include <iostream>\n using namespace std; int main() { int num = 25; cout << num; return 5; }",
+	"lang": "cpp",
+	"input": ""
+}
