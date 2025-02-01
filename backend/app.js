@@ -1,10 +1,5 @@
-var express = require('express')
-var app = express();
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const app = require('./config/app')
 
 app.listen(5000, () => {
-  console.log('Backend running on port 5000')
+  console.log('API Server running on port 5000')
 })
